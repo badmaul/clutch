@@ -121,7 +121,7 @@ class TransmissionJSONEncoder(json.JSONEncoder):
         # date{,time} is represented as seconds since epoch
         try:
             return int(time.mktime(o.timetuple()))
-        except [AttributeError, TypeError]:
+        except (AttributeError, TypeError):
             pass
 
         # time is represented as minutes since midnight
